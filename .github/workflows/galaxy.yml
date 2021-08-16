@@ -12,7 +12,12 @@ jobs:
   release:
     runs-on: ubuntu-20.04
     steps:
-      - name: galaxy
+      - name: release to galaxy
         uses: robertdebock/galaxy-action@1.1.0
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
+
+      - name: get role info
+        uses: buluma/galaxy_role_info
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
