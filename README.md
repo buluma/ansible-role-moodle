@@ -4,7 +4,7 @@ Install and configure moodle on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-moodle/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-moodle)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/moodle)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/moodle)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-moodle.svg)](https://github.com/buluma/ansible-role-moodle/releases/)|
+|[![github](https://github.com/buluma/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-moodle/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-moodle)|![Ansible Quality Score](https://img.shields.io/ansible/quality/55981)|![Ansible Role](https://img.shields.io/ansible/role/d/55981)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-moodle.svg)](https://github.com/buluma/ansible-role-moodle/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
