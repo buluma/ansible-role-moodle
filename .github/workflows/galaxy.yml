@@ -8,6 +8,8 @@ name: Release to Ansible Galaxy
 on:
   release:
     types: [created, edited, published, released]
+  workflow_dispatch:
+    
 jobs:
   release:
     runs-on: ubuntu-20.04
