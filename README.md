@@ -135,7 +135,7 @@ The minimum version of Ansible required is 2.10, tests have been done to:
 
 ## [Exceptions](#exceptions)
 
-Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+Some variations of the build matrix do not work. These are the variations and reasons why the build won't work:
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
@@ -147,12 +147,6 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 ## [License](#license)
 
 Apache-2.0
-
-## [Contributors](#contributors)
-
-I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
-
-- [Jahsis](https://github.com/Jahsis)
 
 ## [Author Information](#author-information)
 
