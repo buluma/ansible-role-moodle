@@ -8,7 +8,7 @@ rules:
   brackets:
     max-spaces-inside: 1
     level: error
-  line-length: 200
+  line-length: disable
   truthy: disable
   trailing-spaces: disable
   indentation: disable
