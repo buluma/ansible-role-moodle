@@ -19,4 +19,4 @@ jobs:
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
       - name: Check Role info
-        run: ansible-galaxy role info buluma.bootstrap
+        run: ansible-galaxy role info buluma.moodle
