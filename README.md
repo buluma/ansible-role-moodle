@@ -4,7 +4,7 @@ Install and configure moodle on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-moodle/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-moodle)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/moodle)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/moodle)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-moodle.svg)](https://github.com/robertdebock/ansible-role-moodle/releases/)|
+|[![github](https://github.com/buluma/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-moodle/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-moodle)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/moodle)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/moodle)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-moodle.svg)](https://github.com/buluma/ansible-role-moodle/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -17,7 +17,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   gather_facts: yes
 
   roles:
-    - role: robertdebock.moodle
+    - role: buluma.moodle
 ```
 
 The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
@@ -46,7 +46,7 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: robertdebock.php
+    - role: buluma.php
     - role: robertdebock.selinux
     - role: robertdebock.httpd
       httpd_vhosts:
@@ -56,7 +56,7 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
     - role: robertdebock.core_dependencies
 ```
 
-Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
+Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
 
 ## [Role Variables](#role-variables)
 
@@ -88,7 +88,7 @@ moodle_wwwroot: "https://{{ ansible_default_ipv4.address }}/moodle"
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-moodle/blob/master/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-moodle/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
 
@@ -113,11 +113,11 @@ The following roles are used to prepare a system. You may choose to prepare your
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
-![dependencies](https://raw.githubusercontent.com/robertdebock/ansible-role-moodle/png/requirements.png "Dependencies")
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-moodle/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
@@ -142,7 +142,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | alpine | mysql role does not work on alpine. |
 
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-moodle/issues)
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-moodle/issues)
 
 ## [License](#license)
 
@@ -156,6 +156,4 @@ I'd like to thank everybody that made contributions to this repository. It motiv
 
 ## [Author Information](#author-information)
 
-[Robert de Bock](https://robertdebock.nl/)
-
-Please consider [sponsoring me](https://github.com/sponsors/robertdebock).
+[Michael Buluma](https://buluma.github.io/index.html)
