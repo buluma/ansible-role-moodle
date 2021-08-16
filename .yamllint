@@ -3,13 +3,16 @@ extends: default
 
 rules:
   braces:
-    max-spaces-inside: 1
+    max-spaces-inside: 5
     level: error
   brackets:
     max-spaces-inside: 1
     level: error
-  line-length: disable
+  line-length: 200
   truthy: disable
+  trailing-spaces: disable
+  indentation: disable
+  comments: disable
 
 ignore: |
   .tox/
