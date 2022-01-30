@@ -33,10 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "enterpriselinux"
-            tag: "latest"
-          - image: "debian"
-            tag: "latest"
           - image: "debian"
             tag: "bookworm"
           - image: "fedora"
