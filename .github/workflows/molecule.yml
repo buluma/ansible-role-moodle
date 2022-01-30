@@ -33,12 +33,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "debian"
-            tag: "bookworm"
-          - image: "ubuntu"
+          - image: "php-apache"
             tag: "latest"
-          - image: "ubuntu"
-            tag: "bionic"
     steps:
       - name: checkout
         uses: actions/checkout@v2
