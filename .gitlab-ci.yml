@@ -1,12 +1,11 @@
 ---
-image: buluma/github-action-molecule
-# image: robertdebock/github-action-molecule:3.0.6
+image: "buluma/github-action-molecule:4.0.5"
 
 services:
   - docker:dind
 
 variables:
-  DOCKER_HOST: "tcp://docker:2376"
+  DOCKER_HOST: "tcp://docker:2375"
   PY_COLORS: 1
 
 molecule:
@@ -17,22 +16,22 @@ molecule:
   retry: 1
   parallel:
     matrix:
-      # - image: "rockylinux"
-      #   tag: "latest"
-      # - image: "debian"
-      #   tag: "latest"
-      # - image: "debian"
-      #   tag: "bullseye"
-      # - image: "fedora"
-      #   tag: "33"
-      # - image: "fedora"
-      #   tag: "latest"
-      # - image: "fedora"
-      #   tag: "rawhide"
-      # - image: "opensuse"
-      #   tag: "latest"
-      # - image: "ubuntu"
-      #   tag: "latest"
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "debian"
+        tag: "latest"
+      - image: "debian"
+        tag: "bookworm"
+      - image: "fedora"
+        tag: "34"
+      - image: "fedora"
+        tag: "latest"
+      - image: "fedora"
+        tag: "rawhide"
+      - image: "opensuse"
+        tag: "latest"
+      - image: "ubuntu"
+        tag: "latest"
       - image: "ubuntu"
         tag: "bionic"
 

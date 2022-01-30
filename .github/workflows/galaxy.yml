@@ -8,15 +8,11 @@ name: Release to Ansible Galaxy
 on:
   release:
     types: [created, edited, published, released]
-  workflow_dispatch:
-
 jobs:
   release:
     runs-on: ubuntu-20.04
     steps:
-      - name: release to galaxy
-        uses: robertdebock/galaxy-action@1.1.0
+      - name: galaxy
+        uses: buluma/galaxy-action@v1.0.1
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
-      - name: Check Role info
-        run: ansible-galaxy role info buluma.moodle

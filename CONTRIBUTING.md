@@ -57,7 +57,7 @@ image=centos tag=7 tox
 
 ### [5. Optionally: Regenerate all dynamic content](#5-optionally-regenerate-all-dynamic-content)
 
-You can use [Ansible Generator](https://github.com/robertdebock/ansible-generator) to regenerate all dynamic content.
+You can use [Ansible Generator](https://github.com/buluma/ansible-generator) to regenerate all dynamic content.
 
 If you don't do it, I'll do it later for you.
 

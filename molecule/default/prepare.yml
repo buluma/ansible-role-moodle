@@ -5,10 +5,10 @@
   gather_facts: no
 
   roles:
-    - role: robertdebock.bootstrap
+    - role: buluma.bootstrap
     - role: robertdebock.buildtools
     - role: robertdebock.epel
-    - role: robertdebock.mysql
+    - role: buluma.mysql
       mysql_databases:
         - name: moodle
           encoding: utf8mb4
@@ -22,11 +22,11 @@
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: robertdebock.php
+    - role: buluma.php
     - role: robertdebock.selinux
     - role: robertdebock.httpd
       httpd_vhosts:
         - name: moodle
           servername: moodle.example.com
-    - role: robertdebock.cron
+    - role: buluma.cron
     - role: robertdebock.core_dependencies
