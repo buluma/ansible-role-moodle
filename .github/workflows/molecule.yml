@@ -12,6 +12,7 @@ on:
   pull_request:
   schedule:
     - cron: '25 13 13 * *'
+  workflow_dispatch:
 
 jobs:
   lint:
