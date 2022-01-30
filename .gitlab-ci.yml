@@ -19,7 +19,7 @@ molecule:
       - image: "rockylinux"
         tag: "latest"
       - image: "fedora"
-            tag: "latest"
+        tag: "latest"
 
 galaxy:
   script:
