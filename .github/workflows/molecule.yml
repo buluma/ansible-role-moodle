@@ -33,26 +33,10 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          # - image: "enterpriselinux"
-          #  tag: "latest"
-          # - image: "debian"
-          #  tag: "latest"
-          # - image: "debian"
-          #  tag: "bookworm"
-          # - image: "fedora"
-          #  tag: "34"
-          # - image: "fedora"
-          #  tag: "latest"
-          # - image: "fedora"
-          #  tag: "rawhide"
-          # - image: "opensuse"
-          #  tag: "latest"
-          # - image: "ubuntu"
-          #  tag: "latest"
-          # - image: "ubuntu"
-          #  tag: "bionic"
-          - image: "php-apache"
+          - image: "fedora"
             tag: "latest"
+          - image: "fedora"
+            tag: "rawhide"
     steps:
       - name: checkout
         uses: actions/checkout@v2
