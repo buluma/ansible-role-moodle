@@ -22,7 +22,7 @@
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: buluma.php
+    - role: robertdebock.php    # TODO undefined variable. The error was: '__php_default_version_debian' is undefined\n\nThe error appears to be in '/root/.cache/molecule/ansible-role-moodle/default/roles/buluma.php/tasks/main.yml
     - role: robertdebock.selinux
     - role: robertdebock.httpd
       httpd_vhosts:

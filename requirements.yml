@@ -8,7 +8,7 @@ roles:
   - name: robertdebock.httpd
   - name: robertdebock.mysql
   - name: buluma.openssl
-  - name: buluma.php
+  - name: robertdebock.php
   - name: buluma.python_pip
   - name: robertdebock.selinux
 collections:
