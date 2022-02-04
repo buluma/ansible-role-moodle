@@ -6,7 +6,7 @@ roles:
   - name: buluma.core_dependencies
   - name: buluma.epel
   - name: robertdebock.httpd
-  - name: buluma.mysql
+  - name: robertdebock.mysql
   - name: buluma.openssl
   - name: buluma.php
   - name: buluma.python_pip
