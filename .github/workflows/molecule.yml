@@ -33,10 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "debian"
-            tag: "bullseye"
-          - image: "debian"
-            tag: "latest"
           - image: "fedora"
             tag: "latest"
           - image: "fedora"
