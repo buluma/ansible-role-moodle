@@ -39,8 +39,6 @@ testing:
   retry: 1
   parallel:
     matrix:
-      - image: "php-apache"
-        tag: "latest"
       - image: "enterpriselinux"
         tag: "latest"
       - image: "debian"
