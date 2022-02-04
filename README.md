@@ -30,8 +30,8 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 
   roles:
     - role: buluma.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.epel
+    - role: buluma.buildtools
+    - role: buluma.epel
     - role: buluma.mysql
       mysql_databases:
         - name: moodle
@@ -41,8 +41,8 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
         - name: moodle
           password: moodle
           priv: "moodle.*:ALL"
-    - role: robertdebock.python_pip
-    - role: robertdebock.openssl
+    - role: buluma.python_pip
+    - role: buluma.openssl
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
@@ -53,7 +53,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
         - name: moodle
           servername: moodle.example.com
     - role: buluma.cron
-    - role: robertdebock.core_dependencies
+    - role: buluma.core_dependencies
 ```
 
 
@@ -95,23 +95,24 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[robertdebock.bootstrap](https://galaxy.ansible.com/buluma/robertdebock.bootstrap)|[![Build Status GitHub](https://github.com/buluma/robertdebock.bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.bootstrap)|
-|[robertdebock.buildtools](https://galaxy.ansible.com/buluma/robertdebock.buildtools)|[![Build Status GitHub](https://github.com/buluma/robertdebock.buildtools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.buildtools/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.buildtools/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.buildtools)|
-|[robertdebock.cron](https://galaxy.ansible.com/buluma/robertdebock.cron)|[![Build Status GitHub](https://github.com/buluma/robertdebock.cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.cron/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.cron/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.cron)|
-|[robertdebock.core_dependencies](https://galaxy.ansible.com/buluma/robertdebock.core_dependencies)|[![Build Status GitHub](https://github.com/buluma/robertdebock.core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.core_dependencies/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.core_dependencies/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.core_dependencies)|
-|[robertdebock.epel](https://galaxy.ansible.com/buluma/robertdebock.epel)|[![Build Status GitHub](https://github.com/buluma/robertdebock.epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.epel/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.epel/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.epel)|
-|[robertdebock.httpd](https://galaxy.ansible.com/buluma/robertdebock.httpd)|[![Build Status GitHub](https://github.com/buluma/robertdebock.httpd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.httpd/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.httpd/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.httpd)|
-|[robertdebock.mysql](https://galaxy.ansible.com/buluma/robertdebock.mysql)|[![Build Status GitHub](https://github.com/buluma/robertdebock.mysql/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.mysql/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.mysql/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.mysql)|
-|[robertdebock.openssl](https://galaxy.ansible.com/buluma/robertdebock.openssl)|[![Build Status GitHub](https://github.com/buluma/robertdebock.openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.openssl/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.openssl/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.openssl)|
-|[robertdebock.php](https://galaxy.ansible.com/buluma/robertdebock.php)|[![Build Status GitHub](https://github.com/buluma/robertdebock.php/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.php/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.php/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.php)|
-|[robertdebock.python_pip](https://galaxy.ansible.com/buluma/robertdebock.python_pip)|[![Build Status GitHub](https://github.com/buluma/robertdebock.python_pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.python_pip/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.python_pip/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.python_pip)|
-|[robertdebock.selinux](https://galaxy.ansible.com/buluma/robertdebock.selinux)|[![Build Status GitHub](https://github.com/buluma/robertdebock.selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.selinux/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.selinux/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.selinux)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.buildtools](https://galaxy.ansible.com/buluma/buildtools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-buildtools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-buildtools/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-buildtools/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-buildtools)|
+|[buluma.cron](https://galaxy.ansible.com/buluma/cron)|[![Build Status GitHub](https://github.com/buluma/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-cron/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-cron/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-cron)|
+|[buluma.core_dependencies](https://galaxy.ansible.com/buluma/core_dependencies)|[![Build Status GitHub](https://github.com/buluma/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-core_dependencies/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-core_dependencies/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-core_dependencies)|
+|[buluma.epel](https://galaxy.ansible.com/buluma/epel)|[![Build Status GitHub](https://github.com/buluma/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-epel/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-epel/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-epel)|
+|[robertdebock.httpd](https://galaxy.ansible.com/buluma/robertdebock.httpd)|[![Build Status GitHub](https://github.com/buluma/robertdebock.httpd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.httpd/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.httpd/badges/main/pipeline.svg)](https://gitlab.com/buluma/robertdebock.httpd)|
+|[buluma.mysql](https://galaxy.ansible.com/buluma/mysql)|[![Build Status GitHub](https://github.com/buluma/ansible-role-mysql/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-mysql/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-mysql/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-mysql)|
+|[buluma.openssl](https://galaxy.ansible.com/buluma/openssl)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-openssl/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-openssl)|
+|[buluma.php](https://galaxy.ansible.com/buluma/php)|[![Build Status GitHub](https://github.com/buluma/ansible-role-php/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-php/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-php/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-php)|
+|[buluma.python_pip](https://galaxy.ansible.com/buluma/python_pip)|[![Build Status GitHub](https://github.com/buluma/ansible-role-python_pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-python_pip/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-python_pip/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-python_pip)|
+|[robertdebock.selinux](https://galaxy.ansible.com/buluma/robertdebock.selinux)|[![Build Status GitHub](https://github.com/buluma/robertdebock.selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.selinux/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.selinux/badges/main/pipeline.svg)](https://gitlab.com/buluma/robertdebock.selinux)|
 
 ## [Context](#context)
 
-This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.nl/) for further information.
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
 
 Here is an overview of related roles:
+
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-moodle/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
@@ -149,4 +150,4 @@ Apache-2.0
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.co.ke/)
+[Michael Buluma](https://buluma.github.io/)

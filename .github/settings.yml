@@ -4,5 +4,5 @@
 #
 repository:
   description: Install and configure moodle on your system.
-  homepage: https://buluma.co.ke/
+  homepage: https://buluma.github.io/
   topics: moodle, ansible, molecule, tox, playbook, hacktoberfest

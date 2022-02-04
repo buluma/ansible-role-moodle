@@ -1,11 +1,11 @@
 ---
-image: buluma/github-action-molecule:4.0.5
+image: "buluma/github-action-molecule:4.0.5"
 
 services:
   - docker:dind
 
 variables:
-  DOCKER_HOST: "tcp://docker:2376"
+  DOCKER_HOST: "tcp://docker:2375"
   PY_COLORS: 1
 
 molecule:
@@ -16,17 +16,38 @@ molecule:
   retry: 1
   parallel:
     matrix:
-      - image: "rockylinux"
+      # - image: "enterpriselinux"
+      #  tag: "latest"
+      # - image: "debian"
+      #  tag: "latest"
+      # - image: "debian"
+      #  tag: "bookworm"
+      # - image: "fedora"
+      #  tag: "34"
+      # - image: "fedora"
+      #  tag: "latest"
+      # - image: "fedora"
+      #  tag: "rawhide"
+      # - image: "opensuse"
+      #  tag: "latest"
+      # - image: "ubuntu"
+      #  tag: "latest"
+      # - image: "ubuntu"
+      #  tag: "bionic"
+      - image: "php-apache"
         tag: "latest"
-      - image: "fedora"
+
+testing:
+  script:
+    - image=${image} tag=${tag} molecule test
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "testing"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "php-apache"
         tag: "latest"
 
 galaxy:
   script:
-    - ansible-galaxy role import --api-key ${GALAXY_API_KEY} ${CI_PROJECT_NAMESPACE} ${CI_PROJECT_NAME}
-  rules:
-    - if: $CI_COMMIT_TAG != null
-
-# gitlab:
-#   script:
-#     - "curl -X POST --fail -F token=TOKEN -F ref=REF_NAME https://gitlab.com/api/v4/projects/33247529/trigger/pipeline"
+    - ansible-galaxy role info ${CI_PROJECT_NAMESPACE}.moodle

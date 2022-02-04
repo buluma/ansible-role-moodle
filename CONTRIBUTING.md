@@ -71,4 +71,4 @@ In the comment-box, you can [refer to the issue number](https://help.github.com/
 
 Now I'll get a message that you've added some code. Thank you, really.
 
-CI starts to test your changes. You can follow the progress on Travis.
+CI starts to test your changes. You can follow the progress on GitHub.
