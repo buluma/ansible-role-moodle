@@ -21,8 +21,6 @@ molecule:
       - image: "debian"
         tag: "latest"
       - image: "fedora"
-        tag: "34"
-      - image: "fedora"
         tag: "latest"
       - image: "fedora"
         tag: "rawhide"
