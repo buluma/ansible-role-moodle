@@ -15,7 +15,7 @@ driver:
   name: docker
 platforms:
   - name: "moodle-${image:-fedora}-${tag:-latest}${TOX_ENVNAME}"
-    image: "${namespace:-robertdebock}/${image:-fedora}:${tag:-latest}"
+    image: "${namespace:-robertdebock}/${image:-fedora}:${tag:-latest}"   # TODO change to localalised hub
     command: /sbin/init
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
