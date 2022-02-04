@@ -47,6 +47,24 @@ testing:
     matrix:
       - image: "php-apache"
         tag: "latest"
+      - image: "debian"
+        tag: "latest"
+      - image: "debian"
+        tag: "latest"
+      - image: "debian"
+        tag: "bookworm"
+      - image: "fedora"
+        tag: "34"
+      - image: "fedora"
+        tag: "latest"
+      - image: "fedora"
+        tag: "rawhide"
+      # - image: "opensuse"
+      #  tag: "latest"
+      # - image: "ubuntu"
+      #  tag: "latest"
+      # - image: "ubuntu"
+      #  tag: "bionic"
 
 galaxy:
   script:
