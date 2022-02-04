@@ -1,15 +1,15 @@
 ---
 roles:
   - name: buluma.bootstrap
-  - name: robertdebock.buildtools
+  - name: buluma.buildtools
   - name: buluma.cron
-  - name: robertdebock.core_dependencies
-  - name: robertdebock.epel
+  - name: buluma.core_dependencies
+  - name: buluma.epel
   - name: robertdebock.httpd
   - name: buluma.mysql
-  - name: robertdebock.openssl
+  - name: buluma.openssl
   - name: buluma.php
-  - name: robertdebock.python_pip
+  - name: buluma.python_pip
   - name: robertdebock.selinux
 collections:
   - name: ansible.posix

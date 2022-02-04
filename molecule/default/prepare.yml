@@ -6,8 +6,8 @@
 
   roles:
     - role: buluma.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.epel
+    - role: buluma.buildtools
+    - role: buluma.epel
     - role: buluma.mysql
       mysql_databases:
         - name: moodle
@@ -17,8 +17,8 @@
         - name: moodle
           password: moodle
           priv: "moodle.*:ALL"
-    - role: robertdebock.python_pip
-    - role: robertdebock.openssl
+    - role: buluma.python_pip
+    - role: buluma.openssl
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
@@ -29,4 +29,4 @@
         - name: moodle
           servername: moodle.example.com
     - role: buluma.cron
-    - role: robertdebock.core_dependencies
+    - role: buluma.core_dependencies
