@@ -8,7 +8,7 @@
     - role: buluma.bootstrap
     - role: buluma.buildtools
     - role: buluma.epel
-    - role: buluma.mysql
+    - role: buluma.mysql   # TODO The error was: '__mysql_packages' is undefined\n\nThe error appears to be in '/root/.cache/molecule/ansible-role-moodle/default/roles/buluma.mysql/tasks/variables.yml': line 11, column 3
       mysql_databases:
         - name: moodle
           encoding: utf8mb4
@@ -22,7 +22,7 @@
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: buluma.php
+    - role: robertdebock.php    # TODO undefined variable. The error was: '__php_default_version_debian' is undefined\n\nThe error appears to be in '/root/.cache/molecule/ansible-role-moodle/default/roles/buluma.php/tasks/main.yml
     - role: robertdebock.selinux
     - role: robertdebock.httpd
       httpd_vhosts:
