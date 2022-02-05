@@ -12,14 +12,26 @@ molecule:
   script:
     - image=${image} tag=${tag} molecule test
   rules:
-    - if: $CI_COMMIT_REF_NAME == "master"
+    - if: $CI_COMMIT_REF_NAME == "main"
   retry: 1
   parallel:
     matrix:
-      - image: "fedora"
+      - image: "enterpriselinux"
         tag: "latest"
-      - image: "fedora"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
         tag: "rawhide"
+      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "bionic"
 
 testing:
   script:
@@ -29,17 +41,23 @@ testing:
   retry: 1
   parallel:
     matrix:
-      - image: "fedora"
+      - image: "enterpriselinux"
         tag: "latest"
-      - image: "fedora"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
         tag: "rawhide"
-      # - image: "opensuse"
-      #  tag: "latest"
-      # - image: "ubuntu"
-      #  tag: "latest"
-      # - image: "ubuntu"
-      #  tag: "bionic"
+      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "bionic"
 
 galaxy:
   script:
-    - ansible-galaxy role info ${CI_PROJECT_NAMESPACE}.moodle
+    - ansible-galaxy role info buluma.moodle
