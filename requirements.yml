@@ -5,12 +5,12 @@ roles:
   - name: buluma.cron
   - name: buluma.core_dependencies
   - name: buluma.epel
-  - name: robertdebock.httpd
+  - name: buluma.httpd
   - name: buluma.mysql
   - name: buluma.openssl
-  - name: robertdebock.php
+  - name: buluma.php
   - name: buluma.python_pip
-  - name: robertdebock.selinux
+  - name: buluma.selinux
 collections:
   - name: ansible.posix
   - name: community.mysql

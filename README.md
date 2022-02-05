@@ -4,7 +4,7 @@ Install and configure moodle on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-moodle/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-moodle)|[![quality](https://img.shields.io/ansible/quality/55981)](https://galaxy.ansible.com/buluma/moodle)|[![downloads](https://img.shields.io/ansible/role/d/55981)](https://galaxy.ansible.com/buluma/moodle)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-moodle.svg)](https://github.com/buluma/ansible-role-moodle/releases/)|
+|[![github](https://github.com/buluma/ansible-role-moodle/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-moodle/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-moodle/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-moodle)|[![quality](https://img.shields.io/ansible/quality/55981)](https://galaxy.ansible.com/buluma/moodle)|[![downloads](https://img.shields.io/ansible/role/d/55981)](https://galaxy.ansible.com/buluma/moodle)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-moodle.svg)](https://github.com/buluma/ansible-role-moodle/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -32,7 +32,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
     - role: buluma.bootstrap
     - role: buluma.buildtools
     - role: buluma.epel
-    - role: buluma.mysql
+    - role: buluma.mysql   # TODO The error was: '__mysql_packages' is undefined\n\nThe error appears to be in '/root/.cache/molecule/buluma.moodle/default/roles/buluma.mysql/tasks/variables.yml': line 11, column 3
       mysql_databases:
         - name: moodle
           encoding: utf8mb4
@@ -47,8 +47,8 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
     - role: buluma.php
-    - role: robertdebock.selinux
-    - role: robertdebock.httpd
+    - role: buluma.selinux
+    - role: buluma.httpd
       httpd_vhosts:
         - name: moodle
           servername: moodle.example.com
@@ -87,7 +87,7 @@ moodle_wwwroot: "https://{{ ansible_default_ipv4.address }}/moodle"
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-moodle/blob/master/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-moodle/blob/main/requirements.txt).
 
 ## [Status of used roles](#status-of-requirements)
 
@@ -100,12 +100,12 @@ The following roles are used to prepare a system. You can prepare your system in
 |[buluma.cron](https://galaxy.ansible.com/buluma/cron)|[![Build Status GitHub](https://github.com/buluma/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-cron/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-cron/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-cron)|
 |[buluma.core_dependencies](https://galaxy.ansible.com/buluma/core_dependencies)|[![Build Status GitHub](https://github.com/buluma/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-core_dependencies/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-core_dependencies/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-core_dependencies)|
 |[buluma.epel](https://galaxy.ansible.com/buluma/epel)|[![Build Status GitHub](https://github.com/buluma/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-epel/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-epel/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-epel)|
-|[robertdebock.httpd](https://galaxy.ansible.com/buluma/robertdebock.httpd)|[![Build Status GitHub](https://github.com/buluma/robertdebock.httpd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.httpd/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.httpd/badges/main/pipeline.svg)](https://gitlab.com/buluma/robertdebock.httpd)|
+|[buluma.httpd](https://galaxy.ansible.com/buluma/httpd)|[![Build Status GitHub](https://github.com/buluma/ansible-role-httpd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-httpd/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-httpd/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-httpd)|
 |[buluma.mysql](https://galaxy.ansible.com/buluma/mysql)|[![Build Status GitHub](https://github.com/buluma/ansible-role-mysql/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-mysql/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-mysql/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-mysql)|
 |[buluma.openssl](https://galaxy.ansible.com/buluma/openssl)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-openssl/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-openssl)|
 |[buluma.php](https://galaxy.ansible.com/buluma/php)|[![Build Status GitHub](https://github.com/buluma/ansible-role-php/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-php/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-php/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-php)|
 |[buluma.python_pip](https://galaxy.ansible.com/buluma/python_pip)|[![Build Status GitHub](https://github.com/buluma/ansible-role-python_pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-python_pip/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-python_pip/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-python_pip)|
-|[robertdebock.selinux](https://galaxy.ansible.com/buluma/robertdebock.selinux)|[![Build Status GitHub](https://github.com/buluma/robertdebock.selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.selinux/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.selinux/badges/main/pipeline.svg)](https://gitlab.com/buluma/robertdebock.selinux)|
+|[buluma.selinux](https://galaxy.ansible.com/buluma/selinux)|[![Build Status GitHub](https://github.com/buluma/ansible-role-selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-selinux/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-selinux/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-selinux)|
 
 ## [Context](#context)
 
