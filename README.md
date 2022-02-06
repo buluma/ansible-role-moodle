@@ -32,7 +32,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
     - role: buluma.bootstrap
     - role: buluma.buildtools
     - role: buluma.epel
-    - role: buluma.mysql   # TODO The error was: '__mysql_packages' is undefined\n\nThe error appears to be in '/root/.cache/molecule/buluma.moodle/default/roles/buluma.mysql/tasks/variables.yml': line 11, column 3
+    - role: buluma.mysql
       mysql_databases:
         - name: moodle
           encoding: utf8mb4
