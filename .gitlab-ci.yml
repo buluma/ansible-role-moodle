@@ -20,6 +20,8 @@ molecule:
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
@@ -45,6 +47,35 @@ testing:
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "rawhide"
+      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "bionic"
+
+role_testing:
+  script:
+    - image=${image} tag=${tag} ansible-galaxy install buluma.moodle
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "testing"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
@@ -61,3 +92,28 @@ testing:
 galaxy:
   script:
     - ansible-galaxy role info buluma.moodle
+
+role_testing_live:
+  script:
+    - image=${image} tag=${tag} ansible-galaxy install buluma.moodle
+  retry: 1
+  parallel:
+    matrix:
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "rawhide"
+      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "bionic"
