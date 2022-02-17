@@ -6,9 +6,17 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: "${{ secrets.SLACK_WEBHOOK_URL }}"
     steps:
+      - uses: act10ns/slack@v1
+        with:
+          status: starting
+          channel: "#ansible"
+          message: Starting Ansible Moodle GitLab Trigger...
+        if: always()
       - uses: actions/checkout@v2.4.0
-      - name: Mirror + trigger CI
+      - name: Mirror + trigger CI.
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
           args: "buluma/ansible-role-moodle"
@@ -18,3 +26,11 @@ jobs:
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
           GITLAB_PROJECT_ID: "33407223"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Slack Notification
+        uses: act10ns/slack@v1
+        with:
+          status: "${{ job.status }}"
+          steps: "${{ toJson(steps) }}"
+          channel: "#ansible"
+        if: always()
