@@ -16,7 +16,7 @@ jobs:
           message: Starting Ansible Moodle GitLab Trigger...
         if: always()
       - uses: actions/checkout@v2.4.0
-      - name: Mirror + trigger CI
+      - name: Mirror + trigger CI.
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
           args: "buluma/ansible-role-moodle"
