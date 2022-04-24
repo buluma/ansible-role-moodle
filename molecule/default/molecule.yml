@@ -14,8 +14,8 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: "moodle-${image:-ubuntu}-${tag:-latest}${TOX_ENVNAME}"
-    image: "${namespace:-buluma}/${image:-ubuntu}:${tag:-latest}"
+  - name: "moodle-${image:-docker-ubuntu2104-ansible}-${tag:-latest}${TOX_ENVNAME}"
+    image: "${namespace:-buluma}/${image:-docker-ubuntu2104-ansible}:${tag:-latest}"
     command: /sbin/init
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
