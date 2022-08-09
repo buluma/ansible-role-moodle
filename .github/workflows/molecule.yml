@@ -63,10 +63,6 @@ jobs:
             tag: "focal"
           - image: "docker-ubuntu-systemd"
             tag: "bionic"
-          - image: "amazonlinux"
-            tag: "1"
-          - image: "amazonlinux"
-            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3

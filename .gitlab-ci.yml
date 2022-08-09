@@ -39,10 +39,6 @@ molecule:
         tag: "focal"
       - image: "docker-ubuntu-systemd"
         tag: "bionic"
-      - image: "amazonlinux"
-        tag: "1"
-      - image: "amazonlinux"
-        tag: "latest"
 
 testing:
   stage: test
@@ -75,7 +71,3 @@ testing:
         tag: "focal"
       - image: "docker-ubuntu-systemd"
         tag: "bionic"
-      - image: "amazonlinux"
-        tag: "1"
-      - image: "amazonlinux"
-        tag: "latest"

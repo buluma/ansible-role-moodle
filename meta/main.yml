@@ -23,9 +23,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Amazon
-      versions:
-        - all
 
   galaxy_tags:
     - moodle
