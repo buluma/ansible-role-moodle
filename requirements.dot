@@ -1,0 +1,29 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "moodle" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.buildtools" [fillcolor=green style=filled]
+    "buluma.cron" [fillcolor=green style=filled]
+    "buluma.core_dependencies" [fillcolor=green style=filled]
+    "buluma.epel" [fillcolor=green style=filled]
+    "buluma.httpd" [fillcolor=green style=filled]
+    "buluma.mysql" [fillcolor=green style=filled]
+    "buluma.openssl" [fillcolor=green style=filled]
+    "buluma.php" [fillcolor=green style=filled]
+    "buluma.python_pip" [fillcolor=green style=filled]
+    "buluma.selinux" [fillcolor=green style=filled]
+  }
+  "moodle" -> "buluma.bootstrap"
+  "moodle" -> "buluma.buildtools"
+  "moodle" -> "buluma.cron"
+  "moodle" -> "buluma.core_dependencies"
+  "moodle" -> "buluma.epel"
+  "moodle" -> "buluma.httpd"
+  "moodle" -> "buluma.mysql"
+  "moodle" -> "buluma.openssl"
+  "moodle" -> "buluma.php"
+  "moodle" -> "buluma.python_pip"
+  "moodle" -> "buluma.selinux"
+}
