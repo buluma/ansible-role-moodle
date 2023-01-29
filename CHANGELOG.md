@@ -6,7 +6,6 @@
 
 **Merged pull requests:**
 
-- update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
 - mbstring missing [\#31](https://github.com/buluma/ansible-role-moodle/pull/31) ([mihailstoynov](https://github.com/mihailstoynov))
 - Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#28](https://github.com/buluma/ansible-role-moodle/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -36,6 +35,7 @@
 
 **Merged pull requests:**
 
+- update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
 - Testing concurrency [\#21](https://github.com/buluma/ansible-role-moodle/pull/21) ([buluma](https://github.com/buluma))
 
 ## [1.0.6](https://github.com/buluma/ansible-role-moodle/tree/1.0.6) (2022-02-20)
