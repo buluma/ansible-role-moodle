@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
 - Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#28](https://github.com/buluma/ansible-role-moodle/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.0.0](https://github.com/buluma/ansible-role-moodle/tree/2.0.0) (2022-08-09)
