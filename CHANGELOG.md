@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-moodle/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/2.0.0...HEAD)
+
+**Merged pull requests:**
+
+- update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
+- mbstring missing [\#31](https://github.com/buluma/ansible-role-moodle/pull/31) ([mihailstoynov](https://github.com/mihailstoynov))
+- Set owner of config [\#30](https://github.com/buluma/ansible-role-moodle/pull/30) ([mihailstoynov](https://github.com/mihailstoynov))
+- Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#28](https://github.com/buluma/ansible-role-moodle/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.0](https://github.com/buluma/ansible-role-moodle/tree/2.0.0) (2022-08-09)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.10...2.0.0)

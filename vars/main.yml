@@ -9,6 +9,7 @@ _moodle_requirements:
     - php-intl
     - php-xmlrpc
     - php-soap
+    - php-mbstring
   RedHat-8:
     - php-mysqlnd
     - php-zip
@@ -26,12 +27,14 @@ _moodle_requirements:
     - php-intl
     - php-xmlrpc
     - php-soap
+    - php-mbstring
   Debian-testing:
     - php-mysql
     - php-zip
     - php-gd
     - php-intl
     - php-soap
+    - php-mbstring
   Suse:
     - php7-mysql
     - php7-zip

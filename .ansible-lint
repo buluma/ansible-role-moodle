@@ -14,4 +14,4 @@ exclude_paths:
   - ./requirements.yml
 
 warn_list:
-  - jinja
+  - jinja[spacing]  # TODO: Rule that looks inside jinja2 templates
