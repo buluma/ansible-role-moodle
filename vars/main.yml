@@ -17,7 +17,9 @@ _moodle_requirements:
     - php-intl
     - php-xmlrpc
     - php-soap
+    - php-json
     - php-mbstring
+    - php-ldap
   Debian:
     - php-mysqli
     - php-zip
