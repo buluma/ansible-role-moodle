@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/molecule-action from 5.0.4 to 5.0.5 [\#36](https://github.com/buluma/ansible-role-moodle/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
 - update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
 - mbstring missing [\#31](https://github.com/buluma/ansible-role-moodle/pull/31) ([mihailstoynov](https://github.com/mihailstoynov))
 - Set owner of config [\#30](https://github.com/buluma/ansible-role-moodle/pull/30) ([mihailstoynov](https://github.com/mihailstoynov))
@@ -36,6 +37,10 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.6...1.0.7)
 
+**Merged pull requests:**
+
+- Testing concurrency [\#21](https://github.com/buluma/ansible-role-moodle/pull/21) ([buluma](https://github.com/buluma))
+
 ## [1.0.6](https://github.com/buluma/ansible-role-moodle/tree/1.0.6) (2022-02-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.5...1.0.6)
@@ -43,7 +48,6 @@
 **Merged pull requests:**
 
 - Bit different for Debian Bookworm. [\#19](https://github.com/buluma/ansible-role-moodle/pull/19) ([buluma](https://github.com/buluma))
-- Testing [\#12](https://github.com/buluma/ansible-role-moodle/pull/12) ([buluma](https://github.com/buluma))
 
 ## [1.0.5](https://github.com/buluma/ansible-role-moodle/tree/1.0.5) (2022-02-17)
 
@@ -51,7 +55,6 @@
 
 **Merged pull requests:**
 
-- Testing concurrency [\#21](https://github.com/buluma/ansible-role-moodle/pull/21) ([buluma](https://github.com/buluma))
 - test slack notification [\#18](https://github.com/buluma/ansible-role-moodle/pull/18) ([buluma](https://github.com/buluma))
 
 ## [1.0.4](https://github.com/buluma/ansible-role-moodle/tree/1.0.4) (2022-02-12)
@@ -94,6 +97,7 @@
 
 - Update README.md [\#14](https://github.com/buluma/ansible-role-moodle/pull/14) ([buluma](https://github.com/buluma))
 - fixes \#9 \#10 \#11 [\#13](https://github.com/buluma/ansible-role-moodle/pull/13) ([buluma](https://github.com/buluma))
+- Testing [\#12](https://github.com/buluma/ansible-role-moodle/pull/12) ([buluma](https://github.com/buluma))
 - Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
 - lets try with robertdebock's base [\#5](https://github.com/buluma/ansible-role-moodle/pull/5) ([buluma](https://github.com/buluma))
 - GitLab Testing [\#4](https://github.com/buluma/ansible-role-moodle/pull/4) ([buluma](https://github.com/buluma))
