@@ -13,5 +13,8 @@ exclude_paths:
   - ./.github
   - ./requirements.yml
 
-warn_list:
-  - jinja[spacing]  # TODO: Rule that looks inside jinja2 templates
+skip_list:
+  - yaml[truthy]
+
+enable_list:
+  - name[prefix]
