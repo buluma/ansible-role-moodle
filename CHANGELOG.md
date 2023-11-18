@@ -37,6 +37,10 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.6...1.0.7)
 
+**Merged pull requests:**
+
+- Testing concurrency [\#21](https://github.com/buluma/ansible-role-moodle/pull/21) ([buluma](https://github.com/buluma))
+
 ## [1.0.6](https://github.com/buluma/ansible-role-moodle/tree/1.0.6) (2022-02-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.5...1.0.6)
@@ -59,7 +63,6 @@
 
 **Merged pull requests:**
 
-- Testing concurrency [\#21](https://github.com/buluma/ansible-role-moodle/pull/21) ([buluma](https://github.com/buluma))
 - version bump/focal [\#17](https://github.com/buluma/ansible-role-moodle/pull/17) ([buluma](https://github.com/buluma))
 
 ## [1.0.3](https://github.com/buluma/ansible-role-moodle/tree/1.0.3) (2022-02-10)
