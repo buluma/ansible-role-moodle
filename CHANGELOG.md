@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/2.0.0...HEAD)
 
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#40](https://github.com/buluma/ansible-role-moodle/issues/40)
+- Update action [\#39](https://github.com/buluma/ansible-role-moodle/issues/39)
+
 **Merged pull requests:**
 
 - Bump buluma/molecule-action from 5.0.4 to 5.0.5 [\#36](https://github.com/buluma/ansible-role-moodle/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
