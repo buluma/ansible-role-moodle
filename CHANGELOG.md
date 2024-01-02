@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#45](https://github.com/buluma/ansible-role-moodle/issues/45)
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#40](https://github.com/buluma/ansible-role-moodle/issues/40)
 - Update action [\#39](https://github.com/buluma/ansible-role-moodle/issues/39)
 
