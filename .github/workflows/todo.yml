@@ -7,14 +7,22 @@ name: "TODO 2 Issue"
 
 on:
   push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
+    tags_ignore:
+      - '*'
 
 jobs:
   build:
     runs-on: "ubuntu-20.04"
     steps:
-      - uses: "actions/checkout@master"
+      - uses: "actions/checkout@v4"
       - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@v2.3"  # TODO: Update buluma/todo-to-issue-action@v1.0.1 @buluma
+        uses: "buluma/todo-to-issue-action@v2.0.2"
         id: "todo"
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}

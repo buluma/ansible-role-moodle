@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help me improve
+about: Create a report to help me improve this role.
 
 ---
 
@@ -20,7 +20,7 @@ YOUR PLAYBOOK HERE
 
 ## Output
 
-Show at least the error, possible related output, maybe just all the output.
+Show at least the error, possible related output, if possible all the output.
 
 ## Environment
 
@@ -28,4 +28,3 @@ Show at least the error, possible related output, maybe just all the output.
 - Control node Ansible version: [e.g. 2.9.1] (`ansible --version`)
 - Managed node OS: [e.g. CentOS 7] (`cat /etc/os-release`)
 
-Please consider [sponsoring me](https://github.com/sponsors/buluma).
