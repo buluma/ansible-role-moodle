@@ -29,8 +29,8 @@ jobs:
         with:
           command: lint
   test:
-    needs:
-      - lint
+    # needs:
+    #   - lint
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false

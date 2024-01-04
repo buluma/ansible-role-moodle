@@ -21,17 +21,26 @@ molecule:
       - image: "debian-systemd"
         tag: "latest"
       - image: "fedora-systemd"
+<<<<<<< Updated upstream
         tag: "34"
+=======
+        tag: "38"
+>>>>>>> Stashed changes
       - image: "fedora-systemd"
         tag: "latest"
       - image: "fedora-systemd"
         tag: "rawhide"
+<<<<<<< Updated upstream
       - image: "opensuse"
+=======
+      - image: "docker-opensuse-systemd"
+>>>>>>> Stashed changes
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "bionic"
+<<<<<<< Updated upstream
       - image: "docker-ubuntu-systemd"
         tag: "focal"
 
@@ -44,6 +53,9 @@ testing:
   parallel:
     matrix:
       - image: "enterpriselinux"
+=======
+      - image: "kali"
+>>>>>>> Stashed changes
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
