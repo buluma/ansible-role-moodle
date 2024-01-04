@@ -4,15 +4,13 @@ This software implements other software, it's not very likely that this software
 
 ## [Supported Versions](#supported-versions)
 
-The current major version is supported. For example if the current version is 3.4.1:
+These version of [ansible](https://pypi.org/project/ansible/) are supported:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 3.4.1   | :white_check_mark: |
-| 3.4.x   | :white_check_mark: |
-| 3.x.x   | :white_check_mark: |
-| 2.0.0   | :x:                |
-| 1.0.0   | :x:                |
+| 9       | :white_check_mark: |
+| 8       | :white_check_mark: |
+| 7       | :white_check_mark: |
 
 ## [Reporting a Vulnerability](#reporting-a-vulnarability)
 
@@ -21,3 +19,4 @@ Please [open an issue](https://github.com/buluma/ansible-role-moodle/issues) des
 Tell them where to go, how often they can expect to get an update on a
 reported vulnerability, what to expect if the vulnerability is accepted or
 declined, etc.
+
