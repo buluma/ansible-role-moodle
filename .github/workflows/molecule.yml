@@ -59,10 +59,6 @@ jobs:
             tag: "latest"
           - image: "docker-ubuntu-systemd"
             tag: "latest"
-          - image: "docker-ubuntu-systemd"
-            tag: "focal"
-          - image: "docker-ubuntu-systemd"
-            tag: "bionic"
           - image: "kali"
             tag: "latest"
     steps:
