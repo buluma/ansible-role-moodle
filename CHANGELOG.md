@@ -12,6 +12,8 @@
 
 **Merged pull requests:**
 
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#47](https://github.com/buluma/ansible-role-moodle/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 3 to 4 [\#46](https://github.com/buluma/ansible-role-moodle/pull/46) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 5.0.4 to 5.0.5 [\#36](https://github.com/buluma/ansible-role-moodle/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
 - update moodle from 310 to 401 [\#32](https://github.com/buluma/ansible-role-moodle/pull/32) ([mihailstoynov](https://github.com/mihailstoynov))
 - mbstring missing [\#31](https://github.com/buluma/ansible-role-moodle/pull/31) ([mihailstoynov](https://github.com/mihailstoynov))
