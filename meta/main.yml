@@ -22,7 +22,7 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - jammy
     - name: Kali
       versions:
         - all
