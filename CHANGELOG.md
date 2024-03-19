@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#51](https://github.com/buluma/ansible-role-moodle/pull/51) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#50](https://github.com/buluma/ansible-role-moodle/pull/50) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.2.0](https://github.com/buluma/ansible-role-moodle/tree/2.2.0) (2024-01-20)
