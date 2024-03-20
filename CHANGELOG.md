@@ -73,7 +73,6 @@
 **Merged pull requests:**
 
 - Bit different for Debian Bookworm. [\#19](https://github.com/buluma/ansible-role-moodle/pull/19) ([buluma](https://github.com/buluma))
-- Update README.md [\#14](https://github.com/buluma/ansible-role-moodle/pull/14) ([buluma](https://github.com/buluma))
 
 ## [1.0.5](https://github.com/buluma/ansible-role-moodle/tree/1.0.5) (2022-02-17)
 
@@ -121,6 +120,7 @@
 
 **Merged pull requests:**
 
+- Update README.md [\#14](https://github.com/buluma/ansible-role-moodle/pull/14) ([buluma](https://github.com/buluma))
 - fixes \#9 \#10 \#11 [\#13](https://github.com/buluma/ansible-role-moodle/pull/13) ([buluma](https://github.com/buluma))
 - Testing [\#12](https://github.com/buluma/ansible-role-moodle/pull/12) ([buluma](https://github.com/buluma))
 - Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
