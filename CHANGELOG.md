@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#51](https://github.com/buluma/ansible-role-moodle/pull/51) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#50](https://github.com/buluma/ansible-role-moodle/pull/50) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.2.0](https://github.com/buluma/ansible-role-moodle/tree/2.2.0) (2024-01-20)
@@ -72,6 +73,7 @@
 **Merged pull requests:**
 
 - Bit different for Debian Bookworm. [\#19](https://github.com/buluma/ansible-role-moodle/pull/19) ([buluma](https://github.com/buluma))
+- version bump/focal [\#17](https://github.com/buluma/ansible-role-moodle/pull/17) ([buluma](https://github.com/buluma))
 
 ## [1.0.5](https://github.com/buluma/ansible-role-moodle/tree/1.0.5) (2022-02-17)
 
@@ -84,10 +86,6 @@
 ## [1.0.4](https://github.com/buluma/ansible-role-moodle/tree/1.0.4) (2022-02-12)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.3...1.0.4)
-
-**Merged pull requests:**
-
-- version bump/focal [\#17](https://github.com/buluma/ansible-role-moodle/pull/17) ([buluma](https://github.com/buluma))
 
 ## [1.0.3](https://github.com/buluma/ansible-role-moodle/tree/1.0.3) (2022-02-10)
 
