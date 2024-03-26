@@ -3,7 +3,7 @@
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
-  run_once: yes
+  run_once: true
   delegate_to: localhost
 
 - name: Install requirements
@@ -16,7 +16,7 @@
     src: "{{ moodle_src }}"
     dest: "{{ moodle_httpd_data_directory }}"
     creates: "{{ moodle_httpd_data_directory }}/moodle"
-    remote_src: yes
+    remote_src: true
     owner: "{{ moodle_httpd_owner }}"
     group: "{{ moodle_httpd_group }}"
     mode: "0755"
