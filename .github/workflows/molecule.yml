@@ -12,7 +12,6 @@ on:
       - main
       - testing
       - dependabot/**
-      # - renovate/**
     paths-ignore:
       - '**/README.md'
       - '**/CHANGELOG.md'
@@ -21,8 +20,7 @@ on:
   pull_request:
   pull_request_target:
   schedule:
-    # - cron: '25 13 13 * *'
-    - cron: '25 13 * * *'
+    - cron: '25 13 13/13 * *'
 
   workflow_dispatch:
 
@@ -36,10 +34,10 @@ jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
-      - name: checkout
+      - name: Checkout Role
         uses: actions/checkout@v4
-      - name: ansible-lint
-        uses: ansible-community/ansible-lint-action@main
+      - name: Run Ansible-lint
+        uses: ansible/ansible-lint@v24.7.0
   test:
     needs:
       - lint
@@ -55,17 +53,17 @@ jobs:
           - image: "docker-molecule-images"
             tag: "bullseye"
           - image: "docker-molecule-images"
-            tag: "39"
+            tag: "fedora38"
           - image: "docker-molecule-images"
-            tag: "40"
+            tag: "fedora39"
           - image: "docker-molecule-images"
-            tag: "rawhide"
+            tag: "fedora40"
           - image: "docker-molecule-images"
             tag: "opensuse"
           - image: "docker-molecule-images"
             tag: "jammy"
           - image: "docker-molecule-images"
-            tag: "kalilinux"
+            tag: "noble"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4

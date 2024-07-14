@@ -16,16 +16,16 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - all
+        - "38"
+        - "39"
+        - "40"
     - name: opensuse
       versions:
         - all
     - name: Ubuntu
       versions:
         - jammy
-    - name: Kali
-      versions:
-        - all
+        - noble
 
   galaxy_tags:
     - moodle
