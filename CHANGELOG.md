@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/2.2.0...HEAD)
 
+**Closed issues:**
+
+- Update action [\#44](https://github.com/buluma/ansible-role-moodle/issues/44)
+- rebuild action [\#43](https://github.com/buluma/ansible-role-moodle/issues/43)
+
 **Merged pull requests:**
 
 - Bump dependabot/fetch-metadata from 1 to 2 [\#54](https://github.com/buluma/ansible-role-moodle/pull/54) ([dependabot[bot]](https://github.com/apps/dependabot))
