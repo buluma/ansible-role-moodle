@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test if moodle_version is set correctly
   ansible.builtin.assert:
     that:

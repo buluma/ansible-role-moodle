@@ -6,28 +6,22 @@ galaxy_info:
   license: Apache-2.0
   company: ShadowNet
   min_ansible_version: "2.12"
-
   platforms:
     - name: EL
       versions:
-        - "8"
+        - all
     - name: Debian
       versions:
         - all
     - name: Fedora
       versions:
-        - "38"
-        - "39"
-        - "40"
+        - all
     - name: opensuse
       versions:
         - all
     - name: Ubuntu
       versions:
-        - jammy
-        - noble
-
+        - all
   galaxy_tags:
     - moodle
-
 dependencies: []

@@ -10,21 +10,14 @@ on:
     branches:
       - master
       - main
-      - testing
-      - dependabot/**
-    paths-ignore:
-      - '**/README.md'
-      - '**/CHANGELOG.md'
-    tags_ignore:
-      - '*'
   pull_request:
-  pull_request_target:
+    branches:
+      - master
+      - main
   schedule:
-    - cron: '25 13 13/13 * *'
+    - cron: '25 13 13 * *'
 
   workflow_dispatch:
-
-permissions: write-all
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -32,71 +25,82 @@ concurrency:
 
 jobs:
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Role
-        uses: actions/checkout@v4
-      - name: Run Ansible-lint
-        uses: ansible/ansible-lint@v24.12.0
-  test:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: ansible-lint
+        uses: ansible/ansible-lint@v26.1.1
+
+  molecule:
     needs:
       - lint
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        config:
+        distro:
           - image: "enterpriselinux"
-            tag: "8"
+            tag: "latest"
           - image: "docker-molecule-images"
-            tag: "buster"
+            tag: "debian_latest"
+          - image: "docker-molecule-images"
+            tag: "bookworm"
           - image: "docker-molecule-images"
             tag: "bullseye"
           - image: "docker-molecule-images"
-            tag: "fedora38"
+            tag: "fedora_latest"
           - image: "docker-molecule-images"
-            tag: "fedora39"
+            tag: "fedora42"
           - image: "docker-molecule-images"
-            tag: "fedora40"
+            tag: "fedora44"
+          - image: "docker-molecule-images"
+            tag: "fedora45"
           - image: "docker-molecule-images"
             tag: "opensuse"
           - image: "docker-molecule-images"
-            tag: "jammy"
+            tag: "plucky"
           - image: "docker-molecule-images"
-            tag: "noble"
+            tag: "ubuntu_latest"
+          - image: "docker-molecule-images"
+            tag: "jammy"
     steps:
-      - name: Checkout Role
-        uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v6
         with:
-          path: "${{ github.repository }}"
-      - name: Running Molecule Test
-        uses: buluma/molecule-action@v24.6.17
-        with:
-          image: ${{ matrix.config.image }}
-          tag: ${{ matrix.config.tag }}
-      - name: Running Role Test
-        run: ansible-galaxy role import --api-key ${{ secrets.galaxy_api_key }} buluma ${{ github.event.repository.name }}
+          path: ansible-role-moodle
 
-  dependabot:
-    needs:
-      - lint
-      - test
-    runs-on: ubuntu-20.04
-    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'buluma' && github.event_name == 'pull_request'}}
-    steps:
-      - uses: "actions/checkout@master"
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v2
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Approve a PR
-        run: gh pr review --approve "$PR_URL"
+          python-version: "3.13"
+
+      - name: Configure Docker for systemd
+        run: |
+          sudo mkdir -p /etc/docker
+          echo '{
+            "features": {
+              "buildkit": true
+            },
+            "exec-opts": ["native.cgroupdriver=systemd"]
+          }' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker || true
+
+      - name: Install Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip3 install ansible molecule molecule-plugins[docker] docker
+
+      - name: Test with molecule
+        run: |
+          cd ansible-role-moodle
+          molecule test
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: "Merge Dependabot PR"
-        run: gh pr merge --auto --merge "$PR_URL"
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PY_COLORS: 1
+          ANSIBLE_FORCE_COLOR: 1
+          ANSIBLE_ROLES_PATH: ~/.ansible/roles:${GITHUB_WORKSPACE}/ansible-role-moodle
+          image: ${{ matrix.distro.image }}
+          tag: ${{ matrix.distro.tag }}
