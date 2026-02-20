@@ -43,7 +43,8 @@ _moodle_requirements:
     - php7-xmlrpc
     - php7-soap
 
-moodle_requirements: "{{ _moodle_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_moodle_requirements[ansible_os_family] | default(_moodle_requirements['default'] )) }}"
+moodle_requirements: "{{ _moodle_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_moodle_requirements[ansible_os_family] | default(_moodle_requirements['default']
+  )) }}"
 
 moodle_src: "https://download.moodle.org/download.php/direct/stable{{ moodle_version }}/moodle-latest-{{ moodle_version }}.zip"
 
