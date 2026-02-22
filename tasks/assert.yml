@@ -1,71 +1,62 @@
 ---
 - name: assert | Test if moodle_version is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_version is defined
       - moodle_version is number
-    quiet: true
-
 - name: assert | Test if moodle_data_directory is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_data_directory is defined
       - moodle_data_directory is string
-    quiet: true
-
 - name: assert | Test if moodle_directory_mode is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_directory_mode is defined
       - moodle_directory_mode is string
-    quiet: true
-
 - name: assert | Test if moodle_database_type is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_type is defined
       - moodle_database_type is string
       - moodle_database_type in [ "mariadb", "mysql", "mysqli" ]
-    quiet: true
-
 - name: assert | Test if moodle_database_hostname is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_hostname is defined
       - moodle_database_hostname is string
-    quiet: true
-
 - name: assert | Test if moodle_database_name is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_name is defined
       - moodle_database_name is string
-    quiet: true
-
 - name: assert | Test if moodle_database_username is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_username is defined
       - moodle_database_username is string
-    quiet: true
-
 - name: assert | Test if moodle_database_password is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_password is defined
       - moodle_database_password is string
-    quiet: true
-
 - name: assert | Test if moodle_database_prefix is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_database_prefix is defined
       - moodle_database_prefix is string
-    quiet: true
-
 - name: assert | Test if moodle_wwwroot is set correctly
   ansible.builtin.assert:
+    quiet: true
     that:
       - moodle_wwwroot is defined
       - moodle_wwwroot is string
-    quiet: true
