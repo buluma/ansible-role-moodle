@@ -12,75 +12,75 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - become: true
-    gather_facts: true
-    hosts: all
-    name: converge
-    pre_tasks:
-      - apt: update_cache=yes cache_valid_time=600
-        changed_when: false
-        name: Update apt cache.
-        when: ansible_os_family == 'Debian'
-      - ansible.builtin.stat:
-          path: /usr/lib/python3.11/EXTERNALLY-MANAGED
-        name: Check if python3.11 EXTERNALLY-MANAGED file exists
-        register: externally_managed_file_py311
-      - ansible.builtin.command:
-          cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
-            /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-        args:
-          creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-        name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
-        when: externally_managed_file_py311.stat.exists
-      - ansible.builtin.stat:
-          path: /usr/lib/python3.12/EXTERNALLY-MANAGED
-        name: Check if python3.12 EXTERNALLY-MANAGED file exists
-        register: externally_managed_file_py312
-      - ansible.builtin.command:
-          cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
-            /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-        args:
-          creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-        name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
-        when: externally_managed_file_py312.stat.exists
-    roles:
-      - role: buluma.moodle
+- become: true
+  gather_facts: true
+  hosts: all
+  name: converge
+  pre_tasks:
+  - apt: update_cache=yes cache_valid_time=600
+    changed_when: false
+    name: Update apt cache.
+    when: ansible_os_family == 'Debian'
+  - ansible.builtin.stat:
+      path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+    name: Check if python3.11 EXTERNALLY-MANAGED file exists
+    register: externally_managed_file_py311
+  - ansible.builtin.command:
+      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+        /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+    args:
+      creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+    name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
+    when: externally_managed_file_py311.stat.exists
+  - ansible.builtin.stat:
+      path: /usr/lib/python3.12/EXTERNALLY-MANAGED
+    name: Check if python3.12 EXTERNALLY-MANAGED file exists
+    register: externally_managed_file_py312
+  - ansible.builtin.command:
+      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+        /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+    args:
+      creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+    name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
+    when: externally_managed_file_py312.stat.exists
+  roles:
+  - role: buluma.moodle
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-moodle/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - become: true
-    gather_facts: false
-    hosts: all
-    name: prepare
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.buildtools
-      - role: buluma.epel
-      - mysql_databases:
-          - collation: utf8mb4_unicode_ci
-            encoding: utf8mb4
-            name: moodle
-        mysql_users:
-          - name: moodle
-            password: moodle
-            priv: moodle.*:ALL
-        role: buluma.mysql
-      - role: buluma.python_pip
-      - openssl_items:
-          - common_name: '{{ ansible_fqdn }}'
-            name: apache-httpd
-        role: buluma.openssl
-      - role: buluma.php
-      - role: buluma.selinux
-      - httpd_vhosts:
-          - name: moodle
-            servername: moodle.example.com
-        role: buluma.httpd
-      - role: buluma.cron
-      - role: buluma.core_dependencies
+- become: true
+  gather_facts: false
+  hosts: all
+  name: prepare
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.buildtools
+  - role: buluma.epel
+  - mysql_databases:
+    - collation: utf8mb4_unicode_ci
+      encoding: utf8mb4
+      name: moodle
+    mysql_users:
+    - name: moodle
+      password: moodle
+      priv: moodle.*:ALL
+    role: buluma.mysql
+  - role: buluma.python_pip
+  - openssl_items:
+    - common_name: '{{ ansible_fqdn }}'
+      name: apache-httpd
+    role: buluma.openssl
+  - role: buluma.php
+  - role: buluma.selinux
+  - httpd_vhosts:
+    - name: moodle
+      servername: moodle.example.com
+    role: buluma.httpd
+  - role: buluma.cron
+  - role: buluma.core_dependencies
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.

@@ -6,29 +6,29 @@ colors:
   success: '#5DADE2'
 fallback: '[GitHub] {{workflow}} #{{runNumber}} {{jobName}} is {{jobStatus}}'
 fields:
-  - short: false
-    title: Job Steps
-    value: '{{#each jobSteps}}{{icon this.outcome}} {{@key}}
+- short: false
+  title: Job Steps
+  value: '{{#each jobSteps}}{{icon this.outcome}} {{@key}}
 
-      {{/each}}'
-  - short: true
-    title: Workflow
-    value: <{{workflowUrl}}|{{workflow}}>
-  - short: true
-    title: Git Ref
-    value: '{{ref}} ({{refType}})'
-  - short: true
-    title: Run ID
-    value: <{{workflowRunUrl}}|{{runId}}>
-  - short: true
-    title: Run Number
-    value: '{{runNumber}}'
-  - short: true
-    title: Actor
-    value: '{{actor}}'
-  - short: true
-    title: Job Status
-    value: '{{jobStatus}}'
+    {{/each}}'
+- short: true
+  title: Workflow
+  value: <{{workflowUrl}}|{{workflow}}>
+- short: true
+  title: Git Ref
+  value: '{{ref}} ({{refType}})'
+- short: true
+  title: Run ID
+  value: <{{workflowRunUrl}}|{{runId}}>
+- short: true
+  title: Run Number
+  value: '{{runNumber}}'
+- short: true
+  title: Actor
+  value: '{{actor}}'
+- short: true
+  title: Job Status
+  value: '{{jobStatus}}'
 footer: '<{{repositoryUrl}}|{{repositoryName}}> {{workflow}} #{{runNumber}}'
 icon_url: https://octodex.github.com/images/mona-the-rivetertocat.png
 icons:
