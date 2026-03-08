@@ -26,7 +26,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
     name: Check if python3.11 EXTERNALLY-MANAGED file exists
     register: externally_managed_file_py311
   - ansible.builtin.command:
-      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
         /usr/lib/python3.11/EXTERNALLY-MANAGED.old
     args:
       creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
@@ -37,7 +37,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
     name: Check if python3.12 EXTERNALLY-MANAGED file exists
     register: externally_managed_file_py312
   - ansible.builtin.command:
-      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
         /usr/lib/python3.12/EXTERNALLY-MANAGED.old
     args:
       creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
@@ -159,4 +159,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
-
