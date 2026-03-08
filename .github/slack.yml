@@ -1,45 +1,46 @@
 ---
 colors:
-  cancelled: '#A569BD'
-  default: '#7D3C98'
-  failure: '#884EA0'
-  success: '#5DADE2'
-fallback: '[GitHub] {{workflow}} #{{runNumber}} {{jobName}} is {{jobStatus}}'
+  cancelled: "#A569BD"
+  default: "#7D3C98"
+  failure: "#884EA0"
+  success: "#5DADE2"
+fallback: "[GitHub] {{workflow}} #{{runNumber}} {{jobName}} is {{jobStatus}}"
 fields:
-- short: false
-  title: Job Steps
-  value: '{{#each jobSteps}}{{icon this.outcome}} {{@key}}
+  - short: false
+    title: Job Steps
+    value: "{{#each jobSteps}}{{icon this.outcome}} {{@key}}
 
-    {{/each}}'
-- short: true
-  title: Workflow
-  value: <{{workflowUrl}}|{{workflow}}>
-- short: true
-  title: Git Ref
-  value: '{{ref}} ({{refType}})'
-- short: true
-  title: Run ID
-  value: <{{workflowRunUrl}}|{{runId}}>
-- short: true
-  title: Run Number
-  value: '{{runNumber}}'
-- short: true
-  title: Actor
-  value: '{{actor}}'
-- short: true
-  title: Job Status
-  value: '{{jobStatus}}'
-footer: '<{{repositoryUrl}}|{{repositoryName}}> {{workflow}} #{{runNumber}}'
+      {{/each}}"
+  - short: true
+    title: Workflow
+    value: <{{workflowUrl}}|{{workflow}}>
+  - short: true
+    title: Git Ref
+    value: "{{ref}} ({{refType}})"
+  - short: true
+    title: Run ID
+    value: <{{workflowRunUrl}}|{{runId}}>
+  - short: true
+    title: Run Number
+    value: "{{runNumber}}"
+  - short: true
+    title: Actor
+    value: "{{actor}}"
+  - short: true
+    title: Job Status
+    value: "{{jobStatus}}"
+footer: "<{{repositoryUrl}}|{{repositoryName}}> {{workflow}} #{{runNumber}}"
 icon_url: https://octodex.github.com/images/mona-the-rivetertocat.png
 icons:
-  cancelled: ':x:'
-  default: ':interrobang:'
-  failure: ':grimacing:'
-  skipped: ':heavy_minus_sign:'
-  success: ':white_check_mark:'
+  cancelled: ":x:"
+  default: ":interrobang:"
+  failure: ":grimacing:"
+  skipped: ":heavy_minus_sign:"
+  success: ":white_check_mark:"
 pretext: Triggered via {{eventName}} by {{actor}} {{or action "action"}} {{ref}}
   `{{diffRef}}`
-text: '*<{{workflowRunUrl}}|Workflow _{{workflow}}_ job _{{jobName}}_ triggered by
+text:
+  "*<{{workflowRunUrl}}|Workflow _{{workflow}}_ job _{{jobName}}_ triggered by
   _{{eventName}}_ is _{{jobStatus}}_>* for <{{refUrl}}|`{{ref}}`>
 
   {{#if description}}<{{diffUrl}}|`{{diffRef}}`> - {{description}}{{/if}}
@@ -56,7 +57,7 @@ text: '*<{{workflowRunUrl}}|Workflow _{{workflow}}_ job _{{jobName}}_ triggered 
 
   {{/if}}
 
-  '
+  "
 title: GitHub Actions
 title_link: https://support.github.com
 username: GitHub-CI

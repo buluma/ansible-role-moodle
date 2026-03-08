@@ -4,31 +4,31 @@
   hosts: all
   name: converge
   pre_tasks:
-  - apt: update_cache=yes cache_valid_time=600
-    changed_when: false
-    name: Update apt cache.
-    when: ansible_os_family == 'Debian'
-  - ansible.builtin.stat:
-      path: /usr/lib/python3.11/EXTERNALLY-MANAGED
-    name: Check if python3.11 EXTERNALLY-MANAGED file exists
-    register: externally_managed_file_py311
-  - ansible.builtin.command:
-      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
-        /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-    args:
-      creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-    name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
-    when: externally_managed_file_py311.stat.exists
-  - ansible.builtin.stat:
-      path: /usr/lib/python3.12/EXTERNALLY-MANAGED
-    name: Check if python3.12 EXTERNALLY-MANAGED file exists
-    register: externally_managed_file_py312
-  - ansible.builtin.command:
-      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
-        /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-    args:
-      creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-    name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
-    when: externally_managed_file_py312.stat.exists
+    - apt: update_cache=yes cache_valid_time=600
+      changed_when: false
+      name: Update apt cache.
+      when: ansible_os_family == 'Debian'
+    - ansible.builtin.stat:
+        path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+      name: Check if python3.11 EXTERNALLY-MANAGED file exists
+      register: externally_managed_file_py311
+    - ansible.builtin.command:
+        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
+          /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+      args:
+        creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+      name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
+      when: externally_managed_file_py311.stat.exists
+    - ansible.builtin.stat:
+        path: /usr/lib/python3.12/EXTERNALLY-MANAGED
+      name: Check if python3.12 EXTERNALLY-MANAGED file exists
+      register: externally_managed_file_py312
+    - ansible.builtin.command:
+        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
+          /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+      args:
+        creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+      name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
+      when: externally_managed_file_py312.stat.exists
   roles:
-  - role: buluma.moodle
+    - role: buluma.moodle

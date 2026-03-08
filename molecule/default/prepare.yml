@@ -4,28 +4,28 @@
   hosts: all
   name: prepare
   roles:
-  - role: buluma.bootstrap
-  - role: buluma.buildtools
-  - role: buluma.epel
-  - mysql_databases:
-    - collation: utf8mb4_unicode_ci
-      encoding: utf8mb4
-      name: moodle
-    mysql_users:
-    - name: moodle
-      password: moodle
-      priv: moodle.*:ALL
-    role: buluma.mysql
-  - role: buluma.python_pip
-  - openssl_items:
-    - common_name: '{{ ansible_fqdn }}'
-      name: apache-httpd
-    role: buluma.openssl
-  - role: buluma.php
-  - role: buluma.selinux
-  - httpd_vhosts:
-    - name: moodle
-      servername: moodle.example.com
-    role: buluma.httpd
-  - role: buluma.cron
-  - role: buluma.core_dependencies
+    - role: buluma.bootstrap
+    - role: buluma.buildtools
+    - role: buluma.epel
+    - mysql_databases:
+        - collation: utf8mb4_unicode_ci
+          encoding: utf8mb4
+          name: moodle
+      mysql_users:
+        - name: moodle
+          password: moodle
+          priv: moodle.*:ALL
+      role: buluma.mysql
+    - role: buluma.python_pip
+    - openssl_items:
+        - common_name: "{{ ansible_fqdn }}"
+          name: apache-httpd
+      role: buluma.openssl
+    - role: buluma.php
+    - role: buluma.selinux
+    - httpd_vhosts:
+        - name: moodle
+          servername: moodle.example.com
+      role: buluma.httpd
+    - role: buluma.cron
+    - role: buluma.core_dependencies
