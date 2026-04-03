@@ -11,6 +11,11 @@
 
 **Merged pull requests:**
 
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#60](https://github.com/buluma/ansible-role-moodle/pull/60) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#59](https://github.com/buluma/ansible-role-moodle/pull/59) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.7.0 to 24.12.0 [\#58](https://github.com/buluma/ansible-role-moodle/pull/58) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump dependabot/fetch-metadata from 1 to 2 [\#54](https://github.com/buluma/ansible-role-moodle/pull/54) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump release-drafter/release-drafter from 5 to 6 [\#52](https://github.com/buluma/ansible-role-moodle/pull/52) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#51](https://github.com/buluma/ansible-role-moodle/pull/51) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#50](https://github.com/buluma/ansible-role-moodle/pull/50) ([dependabot[bot]](https://github.com/apps/dependabot))
 
