@@ -18,7 +18,7 @@
       role: buluma.mysql
     - role: buluma.python_pip
     - openssl_items:
-        - common_name: "{{ ansible_fqdn }}"
+        - common_name: "{{ ansible_facts['fqdn'] }}"
           name: apache-httpd
       role: buluma.openssl
     - role: buluma.php
