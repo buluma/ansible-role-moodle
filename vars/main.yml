@@ -20,6 +20,7 @@ _moodle_requirements:
     - php-xmlrpc
     - php-soap
     - php-mbstring
+    - php-xml
   Debian-testing:
     - php-mysql
     - php-zip
@@ -27,6 +28,7 @@ _moodle_requirements:
     - php-intl
     - php-soap
     - php-mbstring
+    - php-xml
   RedHat-8:
     - php-mysqlnd
     - php-zip
@@ -37,6 +39,7 @@ _moodle_requirements:
     - php-json
     - php-mbstring
     - php-ldap
+    - php-xml
   Suse:
     - php7-mysql
     - php7-zip
@@ -44,6 +47,7 @@ _moodle_requirements:
     - php7-intl
     - php7-xmlrpc
     - php7-soap
+    - php-xml
   default:
     - php-pear-MDB2-Driver-mysqli
     - php-zip
@@ -52,6 +56,7 @@ _moodle_requirements:
     - php-xmlrpc
     - php-soap
     - php-mbstring
+    - php-xml
 moodle_httpd_data_directory: "{{ _moodle_httpd_data_directory[ansible_facts['os_family']] | default(_moodle_httpd_data_directory['default']) }}"
 moodle_httpd_group: "{{ _moodle_httpd_group[ansible_facts['os_family']] | default(_moodle_httpd_group['default']) }}"
 moodle_httpd_owner: "{{ _moodle_httpd_owner[ansible_facts['os_family']] | default(_moodle_httpd_owner['default']) }}"
