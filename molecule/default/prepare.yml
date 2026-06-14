@@ -1,9 +1,8 @@
 ---
 - name: Prepare
+  hosts: all
   become: true
   gather_facts: false
-- name: Prepare
-  hosts: all
   pre_tasks:
     - name: Install python3 and sudo
       ansible.builtin.raw: |
@@ -34,7 +33,8 @@
     - role: buluma.bootstrap
     - role: buluma.buildtools
     - role: buluma.epel
-    - mysql_databases:
+    - role: buluma.mysql
+      mysql_databases:
         - collation: utf8mb4_unicode_ci
           encoding: utf8mb4
           name: moodle
@@ -42,17 +42,16 @@
         - name: moodle
           password: moodle
           priv: moodle.*:ALL
-      role: buluma.mysql
     - role: buluma.python_pip
-    - openssl_items:
+    - role: buluma.openssl
+      openssl_items:
         - common_name: "{{ ansible_facts['fqdn'] }}"
           name: apache-httpd
-      role: buluma.openssl
     - role: buluma.php
     - role: buluma.selinux
-    - httpd_vhosts:
+    - role: buluma.httpd
+      httpd_vhosts:
         - name: moodle
           servername: moodle.example.com
-      role: buluma.httpd
     - role: buluma.cron
     - role: buluma.core_dependencies
