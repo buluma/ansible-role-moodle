@@ -4,6 +4,20 @@
   gather_facts: false
 - name: Prepare
   hosts: all
+  pre_tasks:
+    - name: Find EXTERNALLY-MANAGED files
+      ansible.builtin.find:
+        paths: /usr/lib
+        patterns: "EXTERNALLY-MANAGED"
+        recurse: true
+      register: externally_managed_files
+
+    - name: Remove EXTERNALLY-MANAGED files
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ externally_managed_files.files }}"
+
   roles:
     - role: buluma.bootstrap
     - role: buluma.buildtools
