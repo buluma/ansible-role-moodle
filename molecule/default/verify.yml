@@ -2,6 +2,7 @@
 - name: Verify
   become: true
   gather_facts: true
+- name: Verify
   hosts: all
   tasks:
     - name: Connect to installer

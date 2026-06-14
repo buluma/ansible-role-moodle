@@ -1,5 +1,5 @@
 ---
-collections:
+collections: []
   - name: ansible.posix
   - name: community.mysql
   - name: ansible.posix
