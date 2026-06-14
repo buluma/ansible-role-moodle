@@ -16,12 +16,7 @@ change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 change-title-escapes: \<*_&
 name-template: v$NEXT_MINOR_VERSION
 tag-template: v$NEXT_MINOR_VERSION
-template: "## What’s Changed
-
-
-  $CHANGES
-
-  "
+template: "## What’s Changed\n\n$CHANGES\n"
 version-resolver:
   default: minor
   major:

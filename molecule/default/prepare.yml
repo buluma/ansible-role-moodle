@@ -1,8 +1,8 @@
 ---
-- become: true
+- name: Prepare
+  become: true
   gather_facts: false
   hosts: all
-  name: prepare
   roles:
     - role: buluma.bootstrap
     - role: buluma.buildtools

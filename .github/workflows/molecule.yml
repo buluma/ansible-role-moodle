@@ -19,10 +19,9 @@ on:
       - codex
       - testing
   schedule:
-    - cron: '25 13 13 * *'
+    - cron: "25 13 13 * *"
 
   workflow_dispatch:
-
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
