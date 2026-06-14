@@ -1,8 +1,7 @@
 ---
-collections: []
+collections:
   - name: ansible.posix
   - name: community.mysql
-  - name: ansible.posix
   - name: community.crypto
 roles:
   - name: buluma.bootstrap
