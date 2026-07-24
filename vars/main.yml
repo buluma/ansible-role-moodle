@@ -48,6 +48,14 @@ _moodle_requirements:
     - php-soap
     - php-mbstring
     - php-xml
+  RedHat-10:
+    - php-mysqlnd
+    - php-zip
+    - php-gd
+    - php-intl
+    - php-soap
+    - php-mbstring
+    - php-xml
   Suse:
     - php7-mysql
     - php7-zip
