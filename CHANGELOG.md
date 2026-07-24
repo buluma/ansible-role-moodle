@@ -99,6 +99,7 @@
 **Merged pull requests:**
 
 - test slack notification [\#18](https://github.com/buluma/ansible-role-moodle/pull/18) ([buluma](https://github.com/buluma))
+- Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
 
 ## [1.0.4](https://github.com/buluma/ansible-role-moodle/tree/1.0.4) (2022-02-12)
 
@@ -115,7 +116,6 @@
 **Merged pull requests:**
 
 - Update .gitlab-ci.yml [\#16](https://github.com/buluma/ansible-role-moodle/pull/16) ([buluma](https://github.com/buluma))
-- lets try with robertdebock's base [\#5](https://github.com/buluma/ansible-role-moodle/pull/5) ([buluma](https://github.com/buluma))
 
 ## [1.0.2](https://github.com/buluma/ansible-role-moodle/tree/1.0.2) (2022-02-06)
 
@@ -142,7 +142,7 @@
 - Update README.md [\#14](https://github.com/buluma/ansible-role-moodle/pull/14) ([buluma](https://github.com/buluma))
 - fixes \#9 \#10 \#11 [\#13](https://github.com/buluma/ansible-role-moodle/pull/13) ([buluma](https://github.com/buluma))
 - Testing [\#12](https://github.com/buluma/ansible-role-moodle/pull/12) ([buluma](https://github.com/buluma))
-- Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
+- lets try with robertdebock's base [\#5](https://github.com/buluma/ansible-role-moodle/pull/5) ([buluma](https://github.com/buluma))
 - GitLab Testing [\#4](https://github.com/buluma/ansible-role-moodle/pull/4) ([buluma](https://github.com/buluma))
 - Bump alstr/todo-to-issue-action from 2.3 to 4.5.4 [\#3](https://github.com/buluma/ansible-role-moodle/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/galaxy-action from 1.0.1 to 1.1.0 [\#2](https://github.com/buluma/ansible-role-moodle/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
