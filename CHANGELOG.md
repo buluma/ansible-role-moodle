@@ -1,5 +1,9 @@
 # Changelog
 
+## [26.6.2](https://github.com/buluma/ansible-role-moodle/tree/26.6.2) (2026-07-24)
+
+[Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/26.6.1...26.6.2)
+
 ## [26.6.1](https://github.com/buluma/ansible-role-moodle/tree/26.6.1) (2026-06-15)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/26.6.0...26.6.1)
@@ -99,7 +103,6 @@
 **Merged pull requests:**
 
 - test slack notification [\#18](https://github.com/buluma/ansible-role-moodle/pull/18) ([buluma](https://github.com/buluma))
-- Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
 
 ## [1.0.4](https://github.com/buluma/ansible-role-moodle/tree/1.0.4) (2022-02-12)
 
@@ -142,6 +145,7 @@
 - Update README.md [\#14](https://github.com/buluma/ansible-role-moodle/pull/14) ([buluma](https://github.com/buluma))
 - fixes \#9 \#10 \#11 [\#13](https://github.com/buluma/ansible-role-moodle/pull/13) ([buluma](https://github.com/buluma))
 - Testing [\#12](https://github.com/buluma/ansible-role-moodle/pull/12) ([buluma](https://github.com/buluma))
+- Testing robertdebock.mysql [\#7](https://github.com/buluma/ansible-role-moodle/pull/7) ([buluma](https://github.com/buluma))
 - lets try with robertdebock's base [\#5](https://github.com/buluma/ansible-role-moodle/pull/5) ([buluma](https://github.com/buluma))
 - GitLab Testing [\#4](https://github.com/buluma/ansible-role-moodle/pull/4) ([buluma](https://github.com/buluma))
 - Bump alstr/todo-to-issue-action from 2.3 to 4.5.4 [\#3](https://github.com/buluma/ansible-role-moodle/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))
