@@ -92,4 +92,4 @@ moodle_requirements: >-
   default(_moodle_requirements['default'] )) }}
 
 moodle_src: >-
-  https://download.moodle.org/download.php/direct/stable{{ moodle_version }}/moodle-latest-{{ moodle_version }}.zip
+  https://download.moodle.org/download.php/stable{{ moodle_version }}/moodle-latest-{{ moodle_version }}.zip
