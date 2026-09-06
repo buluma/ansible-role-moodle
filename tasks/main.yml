@@ -10,6 +10,10 @@
 - name: Set moodle git tag
   ansible.builtin.set_fact:
     moodle_git_tag: "{{ moodle_version | string | regex_replace('^(.)(.)(.)$', '\\1.\\2.\\3') }}"
+- name: Check if moodle is already unpacked
+  ansible.builtin.stat:
+    path: "{{ moodle_httpd_data_directory }}/moodle"
+  register: moodle_installed
 - name: Download moodle archive
   ansible.builtin.get_url:
     dest: /tmp/moodle.zip
@@ -19,22 +23,25 @@
   retries: 3
   until:
     - moodle_download is succeeded
+  when: not moodle_installed.stat.exists
 - name: Unpack moodle
   ansible.builtin.unarchive:
-    creates: "{{ moodle_httpd_data_directory }}/moodle-{{ moodle_git_tag }}"
+    creates: "{{ moodle_httpd_data_directory }}/moodle"
     dest: "{{ moodle_httpd_data_directory }}"
     group: "{{ moodle_httpd_group }}"
     mode: "0755"
     owner: "{{ moodle_httpd_owner }}"
     remote_src: true
     src: /tmp/moodle.zip
+  when: not moodle_installed.stat.exists
 - name: Move moodle into place
   ansible.builtin.command:
     argv:
       - mv
       - "{{ moodle_httpd_data_directory }}/moodle-{{ moodle_git_tag }}"
       - "{{ moodle_httpd_data_directory }}/moodle"
-    creates: "{{ moodle_httpd_data_directory }}/moodle"
+  changed_when: true
+  when: not moodle_installed.stat.exists
 - name: Make directory
   ansible.builtin.file:
     group: "{{ moodle_httpd_group }}"
