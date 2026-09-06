@@ -7,7 +7,18 @@
   ansible.builtin.package:
     name: "{{ moodle_requirements }}"
     state: present
-- name: Download and unpack moodle
+- name: Download moodle archive
+  ansible.builtin.get_url:
+    dest: /tmp/moodle.zip
+    headers:
+      User-Agent: "Mozilla/5.0"
+    mode: "0644"
+    url: "{{ moodle_src }}"
+  register: moodle_download
+  retries: 3
+  until:
+    - moodle_download is succeeded
+- name: Unpack moodle
   ansible.builtin.unarchive:
     creates: "{{ moodle_httpd_data_directory }}/moodle"
     dest: "{{ moodle_httpd_data_directory }}"
@@ -15,11 +26,7 @@
     mode: "0755"
     owner: "{{ moodle_httpd_owner }}"
     remote_src: true
-    src: "{{ moodle_src }}"
-  register: moodle_download_and_unpack
-  retries: 3
-  until:
-    - moodle_download_and_unpack is succeeded
+    src: /tmp/moodle.zip
 - name: Make directory
   ansible.builtin.file:
     group: "{{ moodle_httpd_group }}"
