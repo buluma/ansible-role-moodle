@@ -7,26 +7,34 @@
   ansible.builtin.package:
     name: "{{ moodle_requirements }}"
     state: present
+- name: Set moodle git tag
+  ansible.builtin.set_fact:
+    moodle_git_tag: "{{ moodle_version | string | regex_replace('^(.)(.)(.)$', '\\1.\\2.\\3') }}"
 - name: Download moodle archive
   ansible.builtin.get_url:
     dest: /tmp/moodle.zip
-    headers:
-      User-Agent: "Mozilla/5.0"
     mode: "0644"
-    url: "{{ moodle_src }}"
+    url: "https://github.com/moodle/moodle/archive/refs/tags/v{{ moodle_git_tag }}.zip"
   register: moodle_download
   retries: 3
   until:
     - moodle_download is succeeded
 - name: Unpack moodle
   ansible.builtin.unarchive:
-    creates: "{{ moodle_httpd_data_directory }}/moodle"
+    creates: "{{ moodle_httpd_data_directory }}/moodle-{{ moodle_git_tag }}"
     dest: "{{ moodle_httpd_data_directory }}"
     group: "{{ moodle_httpd_group }}"
     mode: "0755"
     owner: "{{ moodle_httpd_owner }}"
     remote_src: true
     src: /tmp/moodle.zip
+- name: Move moodle into place
+  ansible.builtin.command:
+    argv:
+      - mv
+      - "{{ moodle_httpd_data_directory }}/moodle-{{ moodle_git_tag }}"
+      - "{{ moodle_httpd_data_directory }}/moodle"
+    creates: "{{ moodle_httpd_data_directory }}/moodle"
 - name: Make directory
   ansible.builtin.file:
     group: "{{ moodle_httpd_group }}"

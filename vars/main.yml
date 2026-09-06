@@ -90,6 +90,3 @@ moodle_requirements: >-
   {{ _moodle_requirements[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] |
   default(_moodle_requirements[ansible_facts['os_family']] |
   default(_moodle_requirements['default'] )) }}
-
-moodle_src: >-
-  https://download.moodle.org/download.php/stable{{ moodle_version }}/moodle-latest-{{ moodle_version }}.zip
