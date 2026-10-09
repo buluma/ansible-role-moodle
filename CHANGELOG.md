@@ -103,6 +103,7 @@
 **Merged pull requests:**
 
 - test slack notification [\#18](https://github.com/buluma/ansible-role-moodle/pull/18) ([buluma](https://github.com/buluma))
+- remove fixed todo [\#15](https://github.com/buluma/ansible-role-moodle/pull/15) ([buluma](https://github.com/buluma))
 
 ## [1.0.4](https://github.com/buluma/ansible-role-moodle/tree/1.0.4) (2022-02-12)
 
@@ -119,10 +120,6 @@
 ## [1.0.2](https://github.com/buluma/ansible-role-moodle/tree/1.0.2) (2022-02-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-moodle/compare/1.0.1...1.0.2)
-
-**Merged pull requests:**
-
-- remove fixed todo [\#15](https://github.com/buluma/ansible-role-moodle/pull/15) ([buluma](https://github.com/buluma))
 
 ## [1.0.1](https://github.com/buluma/ansible-role-moodle/tree/1.0.1) (2022-02-06)
 
