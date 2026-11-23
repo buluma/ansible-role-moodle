@@ -114,7 +114,7 @@ moodle_database_prefix: ""
 moodle_database_type: mysqli
 moodle_database_username: moodle
 moodle_directory_mode: "0750"
-moodle_version: 401
+moodle_version: 522
 moodle_wwwroot: "https://{{ ansible_facts['default_ipv4'].address }}/moodle"
 ```
 
